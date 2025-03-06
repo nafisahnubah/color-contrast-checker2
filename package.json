@@ -17,9 +17,13 @@
   "web development",
   "visual accessibility"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nafisahnubah/color-contrast-checker2"
+  },
+  "author": "Nafisah Nubah (https://github.com/nafisahnubah)",
   "license": "ISC",
-  "description": "",
+  "description": "A lightweight npm package to check if two colors meet WCAG (Web Content Accessibility Guidelines) contrast guidelines.",
   "dependencies": {
     "tinycolor2": "^1.6.0"
   }
