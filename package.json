@@ -1,21 +1,21 @@
 {
   "name": "color-contrast-checker2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-  "color contrast",
-  "WCAG",
-  "accessibility",
-  "color accessibility",
-  "web accessibility",
-  "contrast ratio",
-  "color checker",
-  "a11y",
-  "web development",
-  "visual accessibility"
+    "color contrast",
+    "WCAG",
+    "accessibility",
+    "color accessibility",
+    "web accessibility",
+    "contrast ratio",
+    "color checker",
+    "a11y",
+    "web development",
+    "visual accessibility"
   ],
   "repository": {
     "type": "git",
