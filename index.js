@@ -7,10 +7,21 @@ const WCAG_AA_LARGE = 3; // Large text (AA level)
 const WCAG_AAA_LARGE = 4.5; // Large text (AAA level)
 
 /**
+ * Parse a color, throwing if it isn't a valid color.
+ */
+function parseColor(color) {
+  const parsed = tinycolor(color);
+  if (!parsed.isValid()) {
+    throw new Error(`Invalid color: ${JSON.stringify(color)}`);
+  }
+  return parsed;
+}
+
+/**
  * Calculate the relative luminance of a color.
  */
 function getRelativeLuminance(color) {
-  const rgb = tinycolor(color).toRgb();
+  const rgb = parseColor(color).toRgb();
   const [r, g, b] = [rgb.r, rgb.g, rgb.b].map((val) => {
     val /= 255;
     return val <= 0.04045 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
