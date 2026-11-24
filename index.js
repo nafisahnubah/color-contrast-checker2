@@ -33,21 +33,21 @@ function getContrastRatio(color1, color2) {
  * Check if two colors meet WCAG contrast guidelines.
  */
 function isAccessible(color1, color2, level = "AA") {
-    const contrastRatio = getContrastRatio(color1, color2);
-    switch (level) {
-      case "AA":
-        return contrastRatio >= WCAG_AA;
-      case "AAA":
-        return contrastRatio >= WCAG_AAA;
-      case "AA_LARGE":
-        return contrastRatio >= WCAG_AA_LARGE;
-      case "AAA_LARGE":
-        return contrastRatio >= WCAG_AAA_LARGE;
-      default:
-        throw new Error(
-          "Invalid WCAG level. Use 'AA', 'AAA', 'AA_LARGE', or 'AAA_LARGE'."
-        );
-    }
+  const contrastRatio = getContrastRatio(color1, color2);
+  switch (level) {
+    case "AA":
+      return contrastRatio >= WCAG_AA;
+    case "AAA":
+      return contrastRatio >= WCAG_AAA;
+    case "AA_LARGE":
+      return contrastRatio >= WCAG_AA_LARGE;
+    case "AAA_LARGE":
+      return contrastRatio >= WCAG_AAA_LARGE;
+    default:
+      throw new Error(
+        "Invalid WCAG level. Use 'AA', 'AAA', 'AA_LARGE', or 'AAA_LARGE'."
+      );
+  }
 }
 
 module.exports = {
