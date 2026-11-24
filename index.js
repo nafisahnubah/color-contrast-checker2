@@ -51,7 +51,7 @@ function getContrastRatio(color1, color2) {
  */
 function isAccessible(color1, color2, level = "AA") {
   const contrastRatio = getContrastRatio(color1, color2);
-  switch (level) {
+  switch (String(level).toUpperCase()) {
     case "AA":
       return contrastRatio >= WCAG_AA;
     case "AAA":
