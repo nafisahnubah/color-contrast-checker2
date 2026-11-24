@@ -7,12 +7,18 @@ const WCAG_AA_LARGE = 3; // Large text (AA level)
 const WCAG_AAA_LARGE = 4.5; // Large text (AAA level)
 
 /**
- * Parse a color, throwing if it isn't a valid color.
+ * Parse a color, throwing if it isn't a valid, fully opaque color.
+ * Contrast is undefined for translucent colors without knowing the backdrop.
  */
 function parseColor(color) {
   const parsed = tinycolor(color);
   if (!parsed.isValid()) {
     throw new Error(`Invalid color: ${JSON.stringify(color)}`);
+  }
+  if (parsed.getAlpha() < 1) {
+    throw new Error(
+      `Translucent colors are not supported: ${JSON.stringify(color)}`
+    );
   }
   return parsed;
 }
